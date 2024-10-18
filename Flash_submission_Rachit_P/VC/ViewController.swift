@@ -81,7 +81,7 @@ public final class ViewController: UIViewController, UIImagePickerControllerDele
         grainIndicatorLabel.anchor(left: view.leftAnchor, bottom: grainControl.topAnchor, paddingLeft: 20, paddingBottom: 8)
         
         view.addSubview(scratchControl)
-        scratchControl.anchor(top: grainControl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40gi, paddingLeft: 20, paddingRight: 20)
+        scratchControl.anchor(top: grainControl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingRight: 20)
         
         view.addSubview(scratchIndicatorLabel)
         scratchIndicatorLabel.anchor(left: view.leftAnchor, bottom: scratchControl.topAnchor, paddingLeft: 20, paddingBottom: 8)
