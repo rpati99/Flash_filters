@@ -9,7 +9,7 @@ Used Core Image to apply the grain and scratch effects by taking advantage of fi
 ### Built using:- 
 
 #### User Interface
-• UIKit (Programmtic interface)
+• UIKit (Programmtic interface) and dark mode support
 
 #### Filters 
 • Filters were made using Apple's CoreImage
