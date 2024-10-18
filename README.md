@@ -5,7 +5,7 @@
 ### Built using:- 
 
 #### User Interface
-• UIKit (no storyboards)
+• UIKit (Programmtic interface)
 
 #### Filters 
 • Filters were made using Apple's CoreImage
@@ -15,23 +15,19 @@
 
 #### Core Image Filter Flow:-  
 1. Grain Effect:
-	•	CIRandomGenerator generates random noise.
 
-	•	CIColorMatrix transforms the noise into white specks (grain).
+- CIRandomGenerator generates random noise.
+- CIColorMatrix transforms the noise into white specks (grain).
+- CISourceOverCompositing blends the grain on top of the original image.
 
-	•	CISourceOverCompositing blends the grain on top of the original image.
 
+2. Scratch Effect:
 
-2.	Scratch Effect:
-	•	CIRandomGenerator generates random noise.
-
-	•	CGAffineTransform stretches the noise vertically to create long, scratch-like lines.
-
-	•	CIColorMatrix darkens the noise to make the scratches visible.
-
-	•	CIMinimumComponent converts the darkened scratches to grayscale.
-
-	•	CIMultiplyCompositing composites the scratches on top of the original image.
+- CIRandomGenerator generates random noise.
+- CGAffineTransform stretches the noise vertically to create long, scratch-like lines.
+- CIColorMatrix darkens the noise to make the scratches visible.
+- CIMinimumComponent converts the darkened scratches to grayscale.
+- CIMultiplyCompositing composites the scratches on top of the original image.
 
 
 
