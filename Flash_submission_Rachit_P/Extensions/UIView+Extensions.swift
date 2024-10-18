@@ -86,3 +86,19 @@ extension UIView {
 }
 
 
+extension UILabel {
+        // Convenience initializer for setting text and color
+        convenience init(text: String, color: UIColor) {
+            self.init()
+            self.text = text
+            self.textColor = color
+            self.textAlignment = .center // Optional, can adjust as needed
+            self.translatesAutoresizingMaskIntoConstraints = false // For Auto Layout
+        }
+
+        // Method to update label's text and color
+        func configure(withText text: String, color: UIColor) {
+            self.text = text
+            self.textColor = color
+        }
+}

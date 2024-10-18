@@ -17,10 +17,15 @@ public final class ViewController: UIViewController, UIImagePickerControllerDele
         return imgView
     }()
     
-    private let controlTypeLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .green
-        label.font = UIFont.systemFont(ofSize: 20)
+
+    private let grainIndicatorLabel: UILabel = {
+        let label = UILabel(text: "Grain Effect slider", color: .red)
+        return label
+    }()
+    
+    
+    private let scratchIndicatorLabel: UILabel = {
+        let label = UILabel(text: "Scratch Effect slider", color: .blue)
         return label
     }()
     
@@ -57,7 +62,7 @@ public final class ViewController: UIViewController, UIImagePickerControllerDele
         setupUI()
     }
     
-    // UI Setup 
+    // UI Setup
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
@@ -66,19 +71,20 @@ public final class ViewController: UIViewController, UIImagePickerControllerDele
         imageView.anchor(top: view.topAnchor, paddingTop: 100, width: UIScreen.main.bounds.width * 0.8, height: 300)
         imageView.centerX(inView: view)
         
-        view.addSubview(controlTypeLabel)
-        controlTypeLabel.text = "Grain Effect"
-        controlTypeLabel.anchor(left: grainControl.leftAnchor, bottom: grainControl.topAnchor, paddingLeft: 20, paddingBottom: 8)
+    
         
-        // setup effect controls
+        // setup effect control
         view.addSubview(grainControl)
         grainControl.anchor(top: imageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20)
+
+        view.addSubview(grainIndicatorLabel)
+        grainIndicatorLabel.anchor(left: view.leftAnchor, bottom: grainControl.topAnchor, paddingLeft: 20, paddingBottom: 8)
         
-        view.addSubview(controlTypeLabel)
-        controlTypeLabel.text = "Scratch Effect"
-        controlTypeLabel.anchor(left: grainControl.leftAnchor, bottom: grainControl.topAnchor, paddingLeft: 20, paddingBottom: 8)
         view.addSubview(scratchControl)
-        scratchControl.anchor(top: grainControl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20)
+        scratchControl.anchor(top: grainControl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40gi, paddingLeft: 20, paddingRight: 20)
+        
+        view.addSubview(scratchIndicatorLabel)
+        scratchIndicatorLabel.anchor(left: view.leftAnchor, bottom: scratchControl.topAnchor, paddingLeft: 20, paddingBottom: 8)
         
         
         // setup photo selection button
@@ -120,7 +126,6 @@ public final class ViewController: UIViewController, UIImagePickerControllerDele
             break
         }
     }
-    
     
     @objc private func selectImage() {
         let picker = UIImagePickerController()
