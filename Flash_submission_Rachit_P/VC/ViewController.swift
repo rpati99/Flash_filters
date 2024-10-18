@@ -71,7 +71,6 @@ public final class ViewController: UIViewController, UIImagePickerControllerDele
         imageView.anchor(top: view.topAnchor, paddingTop: 100, width: UIScreen.main.bounds.width * 0.8, height: 300)
         imageView.centerX(inView: view)
         
-    
         
         // setup effect control
         view.addSubview(grainControl)
